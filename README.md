@@ -13,11 +13,13 @@ To run lvpt, please install following softwares:
 Import Lvpt files.
 
 ```import lvpt```
+
 ```from velocity_graph import velocity_graph```
 
 Use following code to calculate lazy velocity pseudotime.
 
 ```velocity_graph(adata, steady = 0.05)```
+
 ```lvpt.velocity_pseudotime(adata, root_key='cell9')```
 
 # Examples

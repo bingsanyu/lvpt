@@ -12,6 +12,5 @@ To run lvpt, please install following softwares:
 # Start
 Use following code to calculate laze velocity pseudotime.
 
-```velocity_graph(adata, steady = 0.05)
-lvpt.velocity_pseudotime(adata, root_key='cell9')```
+```velocity_graph(adata, steady = 0.05)\nlvpt.velocity_pseudotime(adata, root_key='cell9')```
 

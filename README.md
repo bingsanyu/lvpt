@@ -1,5 +1,5 @@
 # LVPT
-Lazy velocity pseudotime method for single cell RNA-seq data.
+LVPT (Lazy velocity pseudotime) is a trajectory inference method for single cell RNA-seq data.
 
 # Prepare
 To run lvpt, please install following softwares:

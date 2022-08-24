@@ -25,4 +25,4 @@ File name | Description
 --------- | -----------
 main.py   | The example experiment of pancreas dataset.
 dentategyus.py | The example experiment of dentategyus dataset.
-evaluation.py & evaluation.R | The examples experiment of simulated datasets.
+evaluation.py & evaluation.R | The examples of simulated datasets.

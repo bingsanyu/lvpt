@@ -1,5 +1,35 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
+# 开启代理
+if (!require(r.proxy)) {
+  install.packages("r.proxy")
+}
+r.proxy::proxy()
+# 安装R包
+if (!require(devtools)) {
+  install.packages("devtools")
+}
+if (!require(dyno)) {
+  devtools::install_github("dynverse/dyno")
+}
+if (!require(dyneval)) {
+  devtools::install_github("dynverse/dyneval")
+}
+# 创建用于存放输出数据的文件夹
+simulated_result_dir = "simulated_result"
+simulated_data_dir = "simulated_data"
+if (!dir.exists(simulated_result_dir)){
+  dir.create(simulated_result_dir)
+}
+if (!dir.exists(simulated_data_dir)){
+  dir.create(simulated_data_dir)
+}
+# 指定Python环境（根据你的anaconda安装位置进行修改）
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON = "D:/anaconda/envs/lvpt/python.exe")
+use_python("D:/anaconda/envs/lvpt/python.exe")
+py_config()
+
 library(dyno)
 library(dyneval)
 library(dynplot)
@@ -63,6 +93,7 @@ for(seed in seeds){
 }
 
 # Evaluation
+source_python("./evaluation.py")
 res = c()
 method = "lvpt"
 for(seed in seeds){
@@ -101,7 +132,6 @@ for(seed in seeds){
 monocle = c()
 slingshot = c()
 tscan = c()
-
 seeds = list(1,11,21,61,81)
 for(seed in seeds){
   if(seed%%10==1){

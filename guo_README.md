@@ -34,6 +34,9 @@ if (!require(r.proxy)) {
 }
 r.proxy::proxy()
 # 安装R包
+if (!require(reticulate)) {
+  install.packages("reticulate")
+}
 if (!require(devtools)) {
   install.packages("devtools")
 }
